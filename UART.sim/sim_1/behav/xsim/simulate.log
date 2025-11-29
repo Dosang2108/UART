@@ -1,0 +1,52 @@
+Time resolution is 1 ps
+=== UART Test Started ===
+[TEST 1] Reset
+[TEST 2] RX Test
+[TB] Sending: 0x12
+[TB] Sending: 0x34
+[TB] Sending: 0x56
+[TEST 3] TX Test
+[TX] Starting transmission, data=0x55
+[TX] Start bit sent, moving to DATA state
+[TX] Sent data bit 0 = 1
+[TX] Sent data bit 1 = 0
+[TX] Sent data bit 2 = 1
+[TX] Sent data bit 3 = 0
+[TX] Sent data bit 4 = 1
+[TX] Sent data bit 5 = 0
+[TX] Sent data bit 6 = 1
+[TX] All data bits sent, moving to PARITY state
+[TX] Parity bit sent = 0, moving to STOP state
+[TX] Sent stop bit 1
+[TX] All stop bits sent, transmission complete
+[TX] Starting transmission, data=0xaa
+[TX] Start bit sent, moving to DATA state
+[TX] Sent data bit 0 = 0
+[TX] Sent data bit 1 = 1
+[TX] Sent data bit 2 = 0
+[TX] Sent data bit 3 = 1
+[TX] Sent data bit 4 = 0
+[TX] Sent data bit 5 = 1
+[TX] Sent data bit 6 = 0
+[TX] All data bits sent, moving to PARITY state
+[TX] Parity bit sent = 0, moving to STOP state
+[TX] Sent stop bit 1
+[TX] All stop bits sent, transmission complete
+[TEST 4] Simultaneous Test
+[TX] Starting transmission, data=0xc0
+[TX] Start bit sent, moving to DATA state
+[TX] Sent data bit 0 = 0
+[TX] Sent data bit 1 = 0
+[TX] Sent data bit 2 = 0
+[TX] Sent data bit 3 = 0
+[TB] Sending: 0xd0
+[TX] Sent data bit 4 = 0
+[TX] Sent data bit 5 = 0
+[TX] Sent data bit 6 = 1
+[TX] All data bits sent, moving to PARITY state
+[TX] Parity bit sent = 0, moving to STOP state
+[TX] Sent stop bit 1
+[TX] All stop bits sent, transmission complete
+=== Test Complete ===
+Errors: 0
+$finish called at time : 1242356 ns : File "E:/GITHUB_PROJECT/UART/UART.srcs/sim_1/new/test_bench.v" Line 114

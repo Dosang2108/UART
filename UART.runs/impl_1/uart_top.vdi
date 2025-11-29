@@ -1,0 +1,63 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Wed Nov 26 12:09:50 2025
+# Process ID: 34612
+# Current directory: E:/GITHUB_PROJECT/UART/UART.runs/impl_1
+# Command line: vivado.exe -log uart_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source uart_top.tcl -notrace
+# Log file: E:/GITHUB_PROJECT/UART/UART.runs/impl_1/uart_top.vdi
+# Journal file: E:/GITHUB_PROJECT/UART/UART.runs/impl_1\vivado.jou
+# Running On        :MinhSang
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26100
+# Processor Detail  :12th Gen Intel(R) Core(TM) i5-12500H
+# CPU Frequency     :3110 MHz
+# CPU Physical cores:12
+# CPU Logical cores :16
+# Host memory       :16890 MB
+# Swap memory       :45097 MB
+# Total Virtual     :61988 MB
+# Available Virtual :26238 MB
+#-----------------------------------------------------------
+source uart_top.tcl -notrace
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 530.762 ; gain = 201.117
+Command: link_design -top uart_top -part xc7k70tfbv676-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7k70tfbv676-1
+INFO: [Device 21-9227] Part: xc7k70tfbv676-1 does not have CEAM library.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 936.754 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 49 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2024.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1024.156 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1024.777 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+7 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1053.668 ; gain = 522.906
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k70t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k70t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net uart_rx_inst/frame_error_OBUF has multiple drivers: uart_rx_inst/frame_error_reg_reg__0/Q, and uart_rx_inst/frame_error_reg_reg/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net uart_rx_inst/transaction_stop_toggle has multiple drivers: uart_rx_inst/transaction_stop_toggle_reg/Q, and uart_rx_inst/transaction_stop_toggle_reg__0/Q.
+INFO: [Project 1-461] DRC finished with 2 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+ERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1081.891 ; gain = 28.223
+INFO: [Common 17-83] Releasing license: Implementation
+12 Infos, 0 Warnings, 0 Critical Warnings and 3 Errors encountered.
+opt_design failed
+ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.
+
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 26 12:10:10 2025...

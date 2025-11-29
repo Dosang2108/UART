@@ -101,7 +101,7 @@ module uart_rx #(
                     if(start_bit_detected) begin
                         rx_state <= RECV_STATE;
                         transaction_start_toggle <= ~transaction_start_toggle;
-                        $display("[RX] Start bit detected, beginning reception");
+                        //$display("[RX] Start bit detected, beginning reception");
                     end
                 end 
                 RECV_STATE: begin
@@ -114,7 +114,7 @@ module uart_rx #(
                             rx_state <= IDLE_STATE;
                             timeout_error_reg <= 1'b1;
                             transaction_stop_toggle <= transaction_start_toggle;
-                            $display("[RX] Timeout error detected");
+                            //$display("[RX] Timeout error detected");
                         end
                     end
                     
@@ -122,8 +122,7 @@ module uart_rx #(
                         rx_state <= IDLE_STATE;
                         fifo_wr_reg <= 1'b1;
                         frame_error_reg <= parity_error;
-                        $display("[RX] Transaction complete, data=0x%02h, frame_error=%b", 
-                                 rx_buffer, parity_error);
+                        //$display("[RX] Transaction complete, data=0x%02h, frame_error=%b", rx_buffer, parity_error);
                     end 
                 end
                 default: begin
@@ -150,28 +149,27 @@ module uart_rx #(
                             if (rx_stable == 1'b0) begin
                                 transaction_state <= DATA_STATE;
                                 data_counter <= 0;
-                                $display("[RX] Start bit verified, moving to DATA state");
+                                //$display("[RX] Start bit verified, moving to DATA state");
                             end else begin
                                 // False start, abort
                                 transaction_state <= START_BIT_STATE;
                                 transaction_stop_toggle <= transaction_start_toggle;
-                                $display("[RX] False start bit detected, aborting");
+                                //$display("[RX] False start bit detected, aborting");
                             end
                         end 
                         
                         DATA_STATE: begin
                             rx_buffer[data_counter] <= rx_stable;
-                            $display("[RX] Data bit %0d = %b, buffer=0x%02h", 
-                                     data_counter, rx_stable, rx_buffer);
+                            //$display("[RX] Data bit %0d = %b, buffer=0x%02h", data_counter, rx_stable, rx_buffer);
                             
                             if (data_counter == (DATA_WIDTH - 1)) begin
                                 if (PARITY_SELECT != 0) begin
                                     transaction_state <= PARITY_STATE;
-                                    $display("[RX] All data bits received, moving to PARITY state");
+                                    //$display("[RX] All data bits received, moving to PARITY state");
                                 end else begin
                                     transaction_state <= STOP_STATE;
                                     stop_bit_counter <= STOP_BIT_SELECT;
-                                    $display("[RX] All data bits received (no parity), moving to STOP state");
+                                    //$display("[RX] All data bits received (no parity), moving to STOP state");
                                 end
                             end else begin
                                 data_counter <= data_counter + 1;
@@ -182,8 +180,7 @@ module uart_rx #(
                             parity_buffer <= rx_stable;
                             transaction_state <= STOP_STATE;
                             stop_bit_counter <= STOP_BIT_SELECT;
-                            $display("[RX] Parity bit = %b, expected = %b", 
-                                     rx_stable, calculated_parity);
+                            //$display("[RX] Parity bit = %b, expected = %b", rx_stable, calculated_parity);
                         end 
                         
                         STOP_STATE: begin
@@ -191,16 +188,16 @@ module uart_rx #(
                                 if (stop_bit_counter == 0) begin
                                     transaction_state <= START_BIT_STATE;
                                     transaction_stop_toggle <= transaction_start_toggle;
-                                    $display("[RX] All stop bits received, transaction complete");
+                                    //$display("[RX] All stop bits received, transaction complete");
                                 end else begin
                                     stop_bit_counter <= stop_bit_counter - 1;
-                                    $display("[RX] Stop bit %0d received", STOP_BIT_SELECT - stop_bit_counter + 1);
+                                    //$display("[RX] Stop bit %0d received", STOP_BIT_SELECT - stop_bit_counter + 1);
                                 end
                             end else begin
                                 transaction_state <= START_BIT_STATE;
                                 transaction_stop_toggle <= transaction_start_toggle;
                                 frame_error_reg <= 1'b1;
-                                $display("[RX] Invalid stop bit detected, frame error");
+                                //$display("[RX] Invalid stop bit detected, frame error");
                             end
                         end
                         

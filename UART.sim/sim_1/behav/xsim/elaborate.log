@@ -6,4 +6,35 @@ Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/uart_top.v" Line 1. Module uart_top doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/baudrate_gen.v" Line 1. Module baud_gen_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/FIFO.v" Line 1. Module asyn_fifo(ASFIFO_TYPE=1,FIFO_DEPTH=16) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/sync_cell.v" Line 1. Module sync_cell(WIDTH=5) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/sync_cell.v" Line 1. Module sync_cell(WIDTH=5) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/UART_TX.v" Line 1. Module uart_tx doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/UART_RX.v" Line 1. Module uart_rx doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/FIFO.v" Line 1. Module asyn_fifo(ASFIFO_TYPE=1,FIFO_DEPTH=16) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/sync_cell.v" Line 1. Module sync_cell(WIDTH=5) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/sync_cell.v" Line 1. Module sync_cell(WIDTH=5) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/uart_top.v" Line 1. Module uart_top doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/baudrate_gen.v" Line 1. Module baud_gen_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/FIFO.v" Line 1. Module asyn_fifo(ASFIFO_TYPE=1,FIFO_DEPTH=16) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/sync_cell.v" Line 1. Module sync_cell(WIDTH=5) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/sync_cell.v" Line 1. Module sync_cell(WIDTH=5) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/UART_TX.v" Line 1. Module uart_tx doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/UART_RX.v" Line 1. Module uart_rx doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/FIFO.v" Line 1. Module asyn_fifo(ASFIFO_TYPE=1,FIFO_DEPTH=16) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/sync_cell.v" Line 1. Module sync_cell(WIDTH=5) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/sync_cell.v" Line 1. Module sync_cell(WIDTH=5) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.baud_gen_default
+Compiling module xil_defaultlib.sync_cell(WIDTH=5)
+Compiling module xil_defaultlib.asyn_fifo(ASFIFO_TYPE=1,FIFO_DEP...
+Compiling module xil_defaultlib.uart_tx
+Compiling module xil_defaultlib.uart_rx
+Compiling module xil_defaultlib.uart_top
+Compiling module xil_defaultlib.uart_system_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot uart_system_tb_behav

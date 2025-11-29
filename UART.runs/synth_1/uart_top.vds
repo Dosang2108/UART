@@ -1,0 +1,306 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Wed Nov 26 12:09:04 2025
+# Process ID: 40956
+# Current directory: E:/GITHUB_PROJECT/UART/UART.runs/synth_1
+# Command line: vivado.exe -log uart_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source uart_top.tcl
+# Log file: E:/GITHUB_PROJECT/UART/UART.runs/synth_1/uart_top.vds
+# Journal file: E:/GITHUB_PROJECT/UART/UART.runs/synth_1\vivado.jou
+# Running On        :MinhSang
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26100
+# Processor Detail  :12th Gen Intel(R) Core(TM) i5-12500H
+# CPU Frequency     :3110 MHz
+# CPU Physical cores:12
+# CPU Logical cores :16
+# Host memory       :16890 MB
+# Swap memory       :45097 MB
+# Total Virtual     :61988 MB
+# Available Virtual :28043 MB
+#-----------------------------------------------------------
+source uart_top.tcl -notrace
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 532.332 ; gain = 201.309
+Command: synth_design -top uart_top -part xc7k70tfbv676-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 20440
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 987.375 ; gain = 452.117
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'tx_fifo_full' is not allowed [E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/uart_top.v:40]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'rx_fifo_empty' is not allowed [E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/uart_top.v:46]
+INFO: [Synth 8-6157] synthesizing module 'uart_top' [E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/uart_top.v:1]
+INFO: [Synth 8-6157] synthesizing module 'baud_gen' [E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/baudrate_gen.v:1]
+	Parameter INTERNAL_CLOCK bound to: 125000000 - type: integer 
+	Parameter BAUD_RATE bound to: 115200 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'baud_gen' (0#1) [E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/baudrate_gen.v:1]
+INFO: [Synth 8-6157] synthesizing module 'asyn_fifo' [E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/FIFO.v:1]
+	Parameter ASFIFO_TYPE bound to: 1 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter FIFO_DEPTH bound to: 16 - type: integer 
+	Parameter ALMOST_FULL_TH bound to: 14 - type: integer 
+	Parameter ALMOST_EMPTY_TH bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sync_cell' [E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/sync_cell.v:1]
+	Parameter WIDTH bound to: 5 - type: integer 
+	Parameter NUM_STAGES bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sync_cell' (0#1) [E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/sync_cell.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'asyn_fifo' (0#1) [E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/FIFO.v:1]
+INFO: [Synth 8-6157] synthesizing module 'uart_tx' [E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/UART_TX.v:1]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (0#1) [E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/UART_TX.v:1]
+INFO: [Synth 8-6157] synthesizing module 'uart_rx' [E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/UART_RX.v:1]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter TIMEOUT_CYCLES bound to: 16 - type: integer 
+INFO: [Synth 8-226] default block is never used [E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/UART_RX.v:98]
+INFO: [Synth 8-226] default block is never used [E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/UART_RX.v:147]
+INFO: [Synth 8-6155] done synthesizing module 'uart_rx' (0#1) [E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/UART_RX.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'uart_top' (0#1) [E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/uart_top.v:1]
+WARNING: [Synth 8-7137] Register REGISTERED_FIFO.buffer_reg in module asyn_fifo has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'REGISTERED_FIFO.buffer_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "REGISTERED_FIFO.buffer_reg" dissolved into registers
+WARNING: [Synth 8-6014] Unused sequential element tx_byte_count_reg was removed.  [E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/uart_top.v:155]
+WARNING: [Synth 8-6014] Unused sequential element rx_byte_count_reg was removed.  [E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/uart_top.v:156]
+WARNING: [Synth 8-6014] Unused sequential element frame_error_count_reg was removed.  [E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/uart_top.v:157]
+WARNING: [Synth 8-6014] Unused sequential element timeout_error_count_reg was removed.  [E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/uart_top.v:158]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1102.230 ; gain = 566.973
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1102.230 ; gain = 566.973
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k70tfbv676-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1102.230 ; gain = 566.973
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7k70tfbv676-1
+INFO: [Synth 8-802] inferred FSM for state register 'tx_state_reg' in module 'uart_tx'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              IDLE_STATE |                            00001 |                              000
+         START_BIT_STATE |                            00010 |                              001
+              DATA_STATE |                            00100 |                              010
+            PARITY_STATE |                            01000 |                              011
+          STOP_BIT_STATE |                            10000 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'tx_state_reg' using encoding 'one-hot' in module 'uart_tx'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1102.230 ; gain = 566.973
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   11 Bit       Adders := 1     
+	   2 Input    7 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 5     
+	   3 Input    5 Bit       Adders := 4     
+	   2 Input    4 Bit       Adders := 2     
+	   2 Input    3 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 1     
+	   2 Input    1 Bit       Adders := 1     
++---XORs : 
+	   2 Input      5 Bit         XORs := 4     
+	   2 Input      1 Bit         XORs := 17    
++---XORs : 
+	                8 Bit    Wide XORs := 2     
++---Registers : 
+	               12 Bit    Registers := 2     
+	                8 Bit    Registers := 37    
+	                5 Bit    Registers := 24    
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 24    
++---Muxes : 
+	   2 Input   11 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 2     
+	   4 Input    8 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 2     
+	   4 Input    4 Bit        Muxes := 1     
+	   5 Input    3 Bit        Muxes := 1     
+	   5 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 4     
+	   4 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 56    
+	   5 Input    1 Bit        Muxes := 8     
+	   4 Input    1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+INFO: [Device 21-9227] Part: xc7k70tfbv676-1 does not have CEAM library.
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 1294.652 ; gain = 759.395
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 1294.652 ; gain = 759.395
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 1294.652 ; gain = 759.395
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1294.652 ; gain = 759.395
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1294.652 ; gain = 759.395
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin frame_error_OBUF with 1st driver pin 'uart_rx_inst/frame_error_reg_reg__0/Q' [E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/UART_RX.v:76]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin frame_error_OBUF with 2nd driver pin 'uart_rx_inst/frame_error_reg_reg/Q' [E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/UART_RX.v:199]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uart_rx_inst/transaction_stop_toggle with 1st driver pin 'uart_rx_inst/transaction_stop_toggle_reg__0/Q' [E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/UART_RX.v:73]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uart_rx_inst/transaction_stop_toggle with 2nd driver pin 'uart_rx_inst/transaction_stop_toggle_reg/Q' [E:/GITHUB_PROJECT/UART/UART.srcs/sources_1/new/UART_RX.v:139]
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        2|Failed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1294.652 ; gain = 759.395
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1294.652 ; gain = 759.395
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1294.652 ; gain = 759.395
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1294.652 ; gain = 759.395
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |BUFG  |     1|
+|2     |LUT1  |     7|
+|3     |LUT2  |    26|
+|4     |LUT3  |    25|
+|5     |LUT4  |    24|
+|6     |LUT5  |    68|
+|7     |LUT6  |   109|
+|8     |MUXF7 |    33|
+|9     |MUXF8 |    16|
+|10    |FDCE  |   163|
+|11    |FDPE  |    32|
+|12    |FDRE  |   258|
+|13    |IBUF  |    13|
+|14    |OBUF  |    17|
++------+------+------+
+
+Report Instance Areas: 
++------+----------------------------------+------------+------+
+|      |Instance                          |Module      |Cells |
++------+----------------------------------+------------+------+
+|1     |top                               |            |   792|
+|2     |  baud_gen_inst                   |baud_gen    |    55|
+|3     |  fifo_rx                         |asyn_fifo   |   294|
+|4     |    \REGISTERED_FIFO.rd_ptr_sync  |sync_cell_2 |    15|
+|5     |    \REGISTERED_FIFO.wr_ptr_sync  |sync_cell_3 |    18|
+|6     |  fifo_tx                         |asyn_fifo_0 |   293|
+|7     |    \REGISTERED_FIFO.rd_ptr_sync  |sync_cell   |    14|
+|8     |    \REGISTERED_FIFO.wr_ptr_sync  |sync_cell_1 |    18|
+|9     |  uart_rx_inst                    |uart_rx     |    81|
+|10    |  uart_tx_inst                    |uart_tx     |    38|
++------+----------------------------------+------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1294.652 ; gain = 759.395
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 4 critical warnings and 9 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1294.652 ; gain = 759.395
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1294.652 ; gain = 759.395
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1304.395 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 49 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1398.594 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: b2b50bca
+INFO: [Common 17-83] Releasing license: Synthesis
+29 Infos, 9 Warnings, 4 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1398.594 ; gain = 866.262
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1398.594 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'E:/GITHUB_PROJECT/UART/UART.runs/synth_1/uart_top.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file uart_top_utilization_synth.rpt -pb uart_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 26 12:09:42 2025...
